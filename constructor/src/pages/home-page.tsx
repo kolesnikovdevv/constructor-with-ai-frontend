@@ -1,10 +1,12 @@
 // pages/home-page.tsx
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { ArrowButton } from '../ui/arrow-button/arrow-button'
+import React from "react"
+import { Link } from "react-router-dom"
+import { ArrowButton } from "../ui/arrow-button/arrow-button"
 
-import formsIcon from '../icons/elements/forms-icon.svg'
-import UniversalIcon from '../ui/universal-icon/universal-icon'
+import formsIcon from "../icons/elements/forms-icon.svg"
+import { UniversalIcon } from "../ui/universal-icon/universal-icon"
+import { IconSection } from "../components/icon-selection/icon-section"
+
 export const HomePage: React.FC = () => {
   return (
     <>
@@ -19,6 +21,7 @@ export const HomePage: React.FC = () => {
       <img src={formsIcon} alt="Arrow Icon" />
       <UniversalIcon icon={formsIcon}></UniversalIcon>
       <ArrowButton></ArrowButton>
+      <IconSection icon={formsIcon} text="Your text goes here"></IconSection>
     </>
   )
 }
