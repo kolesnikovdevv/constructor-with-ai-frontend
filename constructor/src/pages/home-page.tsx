@@ -6,6 +6,7 @@ import { ArrowButton } from "../ui/arrow-button/arrow-button"
 import formsIcon from "../icons/elements/forms-icon.svg"
 import { UniversalIcon } from "../ui/universal-icon/universal-icon"
 import { IconSection } from "../components/icon-selection/icon-section"
+import { SearchForm } from "../components/search-form/search-form"
 
 export const HomePage: React.FC = () => {
   return (
@@ -18,10 +19,11 @@ export const HomePage: React.FC = () => {
         <p>Это содержимое главной страницы.</p>
         <Link to="/constructor">Перейти к конструктору</Link>
       </div>
-      <img src={formsIcon} alt="Arrow Icon" />
+      {/* <img src={formsIcon} alt="Arrow Icon" /> */}
       <UniversalIcon icon={formsIcon}></UniversalIcon>
       <ArrowButton></ArrowButton>
       <IconSection icon={formsIcon} text="Your text goes here"></IconSection>
+      <SearchForm></SearchForm>
     </>
   )
 }

@@ -1,4 +1,3 @@
-import React from "react"
 import arrowIcon from "../../icons/arrow/arrow-icon.svg"
 
 export const ArrowButton = () => {

@@ -1,11 +1,11 @@
 // App.tsx
-import React from 'react'
+import React from "react"
 
-import { HomePage } from './pages/home-page'
+import { HomePage } from "./pages/home-page"
 
 const App: React.FC = () => {
   return (
-    <div>
+    <div className="flex flex-col h-screen bg-slate-600">
       <HomePage></HomePage>
     </div>
   )
