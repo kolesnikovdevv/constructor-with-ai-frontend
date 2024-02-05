@@ -10,9 +10,9 @@ interface IconSectionProps {
 
 export const IconSection: React.FC<IconSectionProps> = ({ icon, text }) => {
   return (
-    <div className="flex items-center">
+    <div className="flex items-stretch font-body pb-4 pr-2">
       <UniversalIcon icon={icon}></UniversalIcon>
-      <p>{text}</p>
+      <p className="my-auto grow">{text}</p>
       <ArrowButton></ArrowButton>
     </div>
   )
