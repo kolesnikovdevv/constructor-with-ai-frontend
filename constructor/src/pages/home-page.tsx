@@ -12,16 +12,6 @@ import { SelectionSidebar } from "../modules/selection-sidebar/selection-sidebar
 export const HomePage: React.FC = () => {
   return (
     <>
-      {/* <h1 className="text-3xl font-bold underline text-green-700">
-        Hello world!
-      </h1> */}
-      {/* <div>
-        <h1>Главная страница</h1>
-        <p>Это содержимое главной страницы.</p>
-        <Link to="/constructor">Перейти к конструктору</Link>
-      </div> */}
-      {/* <img src={formsIcon} alt="Arrow Icon" /> */}
-
       <SelectionSidebar></SelectionSidebar>
     </>
   )

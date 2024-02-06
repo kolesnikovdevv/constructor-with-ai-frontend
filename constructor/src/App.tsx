@@ -5,7 +5,7 @@ import { HomePage } from "./pages/home-page"
 
 const App: React.FC = () => {
   return (
-    <div className="flex flex-col h-screen bg-tuatara text-white font-body">
+    <div className="flex flex-col h-screen bg-tuatara text-white">
       <HomePage></HomePage>
     </div>
   )

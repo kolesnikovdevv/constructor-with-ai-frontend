@@ -5,7 +5,7 @@ export const SearchForm = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="mb-4" onSubmit={handleSubmit}>
       <label
         htmlFor="search"
         className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
@@ -33,7 +33,7 @@ export const SearchForm = () => {
         <input
           type="search"
           id="search"
-          className="block w-full p-4 ps-10 text-sm text-gray-900 border rounded-lg bg-woodsmoke dark:bg-woodsmoke dark:border-woodsmoke  dark:text-white "
+          className="block w-full p-3 ps-10 text-sm text-gray-900 border rounded-lg bg-woodsmoke dark:bg-woodsmoke dark:border-woodsmoke  dark:text-white "
           placeholder="Search"
           required
         />
