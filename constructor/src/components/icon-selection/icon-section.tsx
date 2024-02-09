@@ -10,11 +10,13 @@ interface IconSectionProps {
 
 export const IconSection: React.FC<IconSectionProps> = ({ icon, text }) => {
   return (
-    <div className="flex items-stretch mb-4 pr-2 cursor-pointer">
+    <div className="flex items-stretch mb-2 p-1 cursor-pointer transition duration-300 ease-in-out hover:bg-woodsmoke rounded-xl">
       <UniversalIcon icon={icon}></UniversalIcon>
 
       <p className="my-auto grow">{text}</p>
-      <ArrowButton></ArrowButton>
+      <div className="pr-2 flex">
+        <ArrowButton></ArrowButton>
+      </div>
     </div>
   )
 }

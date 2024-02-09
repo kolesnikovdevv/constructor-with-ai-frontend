@@ -8,10 +8,12 @@ import React from "react"
 // import { IconSection } from "../components/icon-selection/icon-section"
 // import { SearchForm } from "../components/search-form/search-form"
 import { SelectionSidebar } from "../modules/selection-sidebar/selection-sidebar"
+import { Navbar } from "../modules/navbar/navbar"
 
 export const HomePage: React.FC = () => {
   return (
     <>
+      <Navbar></Navbar>
       <SelectionSidebar></SelectionSidebar>
     </>
   )

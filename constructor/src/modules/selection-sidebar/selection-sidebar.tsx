@@ -12,14 +12,14 @@ import magnifierIcon from "../../icons/magnifier/magnifier-icon.svg"
 
 export const SelectionSidebar: React.FC = () => {
   return (
-    <div className="w-1/6 p-4 bg-cod_gray h-full flex flex-col">
+    <div className="w-1/6 p-4 pt-20 bg-cod_gray h-full flex flex-col">
       <SearchForm
         icon={magnifierIcon}
         placeholder="введите запрос"
       ></SearchForm>
       <UniversalHeader
         title="Common"
-        titleClassName="opacity-50 mb-4"
+        titleClassName="opacity-50 mb-4 mt-4"
       ></UniversalHeader>
       <IconSection icon={pagesIcon} text="Страницы"></IconSection>
       <IconSection icon={blocksIcon} text="Блоки"></IconSection>

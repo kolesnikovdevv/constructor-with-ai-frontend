@@ -15,7 +15,7 @@ export const SearchForm: React.FC<SearchFormProps> = ({
   }
 
   return (
-    <form className="mb-4 relative" onSubmit={handleSubmit}>
+    <form className="relative" onSubmit={handleSubmit}>
       <div className="relative flex">
         <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
           <img
@@ -31,7 +31,7 @@ export const SearchForm: React.FC<SearchFormProps> = ({
           placeholder={placeholder}
           required
         />
-        <div className="absolute top-1/2 transform -translate-y-1/2 right-2">
+        <div className="absolute top-1/2 transform -translate-y-1/2 right-2 flex w-9 h-9 bg-shark rounded-lg cursor-pointer">
           <ArrowButton />
         </div>
       </div>
