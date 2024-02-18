@@ -13,7 +13,7 @@ import { Navbar } from "../modules/navbar/navbar"
 export const HomePage: React.FC = () => {
   return (
     <>
-      <Navbar></Navbar>
+      {/* <Navbar></Navbar> */}
       <SelectionSidebar></SelectionSidebar>
     </>
   )
