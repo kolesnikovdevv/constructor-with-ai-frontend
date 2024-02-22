@@ -1,9 +1,8 @@
-import block1 from "../../icons/elements/pop-up-menu/block-1.svg"
-interface PopUpMenuProps {
-  selectedItem: string
-}
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
+import { useDispatch } from "react-redux"
 import { ReactSortable } from "react-sortablejs"
+import { changingList } from "../../state/chosen-сomponents/chosen-сomponents"
+
 export const PopUpMenu: React.FC<PopUpMenuProps> = ({ selectedItem }) => {
   const [list1, setList1] = useState([
     { id: 1, name: "Item  1" },
@@ -12,10 +11,15 @@ export const PopUpMenu: React.FC<PopUpMenuProps> = ({ selectedItem }) => {
 
   const [list2, setList2] = useState([])
 
-  // Функция для создания клона элемента
+  const dispatch = useDispatch()
+
   const clone = (item) => {
-    return { ...item, id: Math.random() } // Пример клонирования с новым уникальным ID
+    return { ...item, id: Math.random() }
   }
+
+  useEffect(() => {
+    dispatch(changingList(list2))
+  }, [list2, dispatch])
 
   return (
     <div>
@@ -23,7 +27,7 @@ export const PopUpMenu: React.FC<PopUpMenuProps> = ({ selectedItem }) => {
         <div className=" p-4 pt-20 bg-cod_gray h-full w-96 flex overflow-y-auto">
           <div className="flex">
             <ReactSortable
-              list={list1}
+              list={list1.map((item) => ({ ...item }))} // Convert objects to arrays
               setList={setList1}
               group={{ name: "shared", pull: "clone", put: false }}
               clone={clone}
@@ -35,36 +39,22 @@ export const PopUpMenu: React.FC<PopUpMenuProps> = ({ selectedItem }) => {
             </ReactSortable>
 
             <ReactSortable
-              className=" p-4 pt-20 bg-cod_gray h-full w-96 flex overflow-y-auto"
-              list={list2}
+              className=" m-2 p-2 bg-cod_gray h-40 w-50 flex flex-wrap overflow-y-auto"
+              list={list2.map((item) => ({ ...item }))} // Convert objects to arrays
               setList={setList2}
               animation={200}
               group={{ name: "shared", pull: true }}
             >
               {list2.map((item) => (
-                <div key={item.id}>{item.name}</div>
+                <div className="p-2" key={item.id}>
+                  {item.name}
+                </div>
               ))}
             </ReactSortable>
           </div>
         </div>
       )}
-      {selectedItem === "blocks" && (
-        <div className="p-4 pt-20 bg-cod_gray h-full flex flex-col overflow-y-auto">
-          <div>
-            <div className="p-4 bg-shark rounded-lg mb-3 cursor-pointer">
-              <div className="h-24 w-full"></div>
-            </div>
-            <div className="p-4 bg-shark rounded-lg mb-3 cursor-pointer">
-              <img className="w-full" src={block1} alt="" />
-              {/* <img className="w-full" src={} alt="" /> */}
-            </div>
-            <div className="p-4 bg-shark rounded-lg mb-3 cursor-pointer">
-              <div className="h-24"></div>
-              {/* <img className="w-full" src={} alt="" /> */}
-            </div>
-          </div>
-        </div>
-      )}
+      {/* Your other code */}
     </div>
   )
 }
