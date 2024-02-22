@@ -9,12 +9,19 @@ import React from "react"
 // import { SearchForm } from "../components/search-form/search-form"
 import { SelectionSidebar } from "../modules/selection-sidebar/selection-sidebar"
 import { Navbar } from "../modules/navbar/navbar"
+import { LayoutBuilder } from "../modules/layout-builder/layout-builder"
+import { StylePanel } from "../modules/style-panel/style-panel"
 
 export const HomePage: React.FC = () => {
   return (
-    <>
-      {/* <Navbar></Navbar> */}
+    <div className="flex">
+      <Navbar></Navbar>
+
       <SelectionSidebar></SelectionSidebar>
-    </>
+      <div className="grow"></div>
+      <LayoutBuilder></LayoutBuilder>
+
+      <StylePanel></StylePanel>
+    </div>
   )
 }

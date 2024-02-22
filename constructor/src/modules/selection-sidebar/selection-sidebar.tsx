@@ -21,7 +21,7 @@ export const SelectionSidebar: React.FC = () => {
   }
   return (
     <div className="flex h-full">
-      <div className="w-1/6 p-4 pt-20 bg-cod_gray h-full flex flex-col border-r border-masala">
+      <div className="p-4 pt-20 bg-cod_gray h-screen flex flex-col border-r border-masala">
         <SearchForm
           icon={magnifierIcon}
           placeholder="введите запрос"
@@ -58,8 +58,6 @@ export const SelectionSidebar: React.FC = () => {
         <SearchForm icon={starIconAI} placeholder="введите запрос"></SearchForm>
       </div>
       <PopUpMenu selectedItem={selectedItem}></PopUpMenu>
-      <div className="grow"></div>
-      <StylePanel></StylePanel>
     </div>
   )
 }

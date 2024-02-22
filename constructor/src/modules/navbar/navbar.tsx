@@ -5,7 +5,7 @@ import a_icon from "../../icons/navbar/a.svg"
 import pen_icon from "../../icons/navbar/pen-icon.svg"
 export const Navbar: React.FC = () => {
   return (
-    <div className="absolute px-4 py-2 flex justify-between items-center w-full bg-cod_gray border-b border-masala">
+    <div className="absolute z-40 px-4 py-2 flex justify-between items-center w-full bg-cod_gray border-b border-masala">
       <button>
         <img className="w-12" src={logo} alt="" />
       </button>

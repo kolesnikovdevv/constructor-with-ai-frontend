@@ -3,7 +3,7 @@ import { UniversalHeader } from "../../ui/universal-header/universal-header"
 
 export const StylePanel: React.FC = () => {
   return (
-    <div className="flex h-full w-1/6 p-4 pt-20 bg-cod_gray flex-col border-r border-masala">
+    <div className=" z-50 w-1/6 p-4 pt-20 bg-cod_gray flex-col border-r border-masala">
       <div className="">
         <UniversalHeader title="Sizes" titleClassName="mb-4 "></UniversalHeader>
         <ParameterField title="text" value="priver aaa"></ParameterField>
