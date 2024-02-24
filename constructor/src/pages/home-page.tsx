@@ -15,7 +15,7 @@ import { StylePanel } from "../modules/style-panel/style-panel"
 export const HomePage: React.FC = () => {
   return (
     <div className="flex">
-      <Navbar></Navbar>
+      {/* <Navbar></Navbar> */}
 
       <SelectionSidebar></SelectionSidebar>
       <div className="grow"></div>

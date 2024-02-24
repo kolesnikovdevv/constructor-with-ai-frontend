@@ -1,30 +1,46 @@
-import { useDispatch, useSelector } from "react-redux"
-import { ReactSortable } from "react-sortablejs"
-import { changingList } from "../../state/chosen-сomponents/chosen-сomponents"
 import { useState } from "react"
+import { ReactSortable } from "react-sortablejs"
+import { getComponent } from "../../components/pop-up-menu/utils"
+import { v4 as uuid } from "uuid"
+import { PopUpMenu } from "../../components/pop-up-menu/pop-up-menu"
 
 export const LayoutBuilder = () => {
-  const listState = useSelector(
-    (state) => state.chosenComponents.selectedComponents
-  )
+  const [rightList, setRightList] = useState([])
+  const [formObjects, setFormObjects] = useState({})
 
-  const [list2, setList2] = useState(listState)
-
+  console.log({ rightList, formObjects })
   return (
-    <div className=" bg-white w-1/2 mt-20 mr-20 flex justify-center items-center h-3/4 text-stone-950">
-      <ReactSortable
-        // className=" m-2 p-2 bg-cod_gray h-40 w-50 flex flex-wrap overflow-y-auto"
-        list={list2.map((item) => ({ ...item }))} // Convert objects to arrays
-        setList={setList2}
-        animation={200}
-        group={{ name: "shared", pull: true }}
-      >
-        {list2.map((item) => (
-          <div className="p-2" key={item.id}>
-            {item.name}
+    <ReactSortable
+      className=" bg-white w-1/2 mt-20 mr-20 items-center h-3/4 text-stone-950"
+      preventOnFilter={false}
+      dragoverBubble={true}
+      animation={200}
+      delayOnTouchStart={true}
+      delay={2}
+      sort={true}
+      group={{
+        name: "grouping",
+        pull: false,
+        put: true,
+      }}
+      list={rightList}
+      setList={setRightList}
+    >
+      {rightList.map((item) => (
+        <div key={item.id}>
+          {getComponent(item.name, item.id, setFormObjects, formObjects)}
+          <div
+            onClick={() => {
+              const newData = rightList.filter(
+                (itemFilter) => itemFilter.id !== item.id
+              )
+              setRightList(newData)
+            }}
+          >
+            remove
           </div>
-        ))}
-      </ReactSortable>
-    </div>
+        </div>
+      ))}
+    </ReactSortable>
   )
 }

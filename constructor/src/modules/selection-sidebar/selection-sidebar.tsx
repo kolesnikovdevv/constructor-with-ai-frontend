@@ -57,7 +57,7 @@ export const SelectionSidebar: React.FC = () => {
         ></UniversalHeader>
         <SearchForm icon={starIconAI} placeholder="введите запрос"></SearchForm>
       </div>
-      <PopUpMenu selectedItem={selectedItem}></PopUpMenu>
+      <PopUpMenu></PopUpMenu>
     </div>
   )
 }
