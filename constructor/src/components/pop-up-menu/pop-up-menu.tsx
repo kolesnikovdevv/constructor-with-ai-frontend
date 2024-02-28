@@ -1,12 +1,28 @@
 import { useState } from "react"
 import { ReactSortable } from "react-sortablejs"
-import { getComponent } from "./utils"
+import { getComponent } from "../../modules/layout-builder/utils"
 import { v4 as uuid } from "uuid"
 
 export const PopUpMenu = (props) => {
   const [leftList, setLeftList] = useState([
-    { id: 1, name: "button" },
-    { id: 2, name: "input" },
+    {
+      id: 243636,
+      content: "ffff",
+      width: 3,
+      type: "text",
+      parent_id: 1,
+      chosen: false,
+      selected: false,
+    },
+    {
+      id: 23453454,
+      content: "sssd",
+      width: 3,
+      type: "text",
+      parent_id: 1,
+      chosen: false,
+      selected: false,
+    },
   ])
 
   return (
@@ -34,7 +50,7 @@ export const PopUpMenu = (props) => {
             marginBottom: "12px",
           }}
         >
-          {getComponent(item.name)}
+          {item.content}
         </div>
       ))}
     </ReactSortable>
