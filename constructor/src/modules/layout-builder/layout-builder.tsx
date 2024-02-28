@@ -50,38 +50,67 @@ export const LayoutBuilder = () => {
       ],
     },
     {
-      id: 4,
-      content: "item 2",
+      id: 1,
+      content: "item 1",
       parent_id: null,
       type: "container",
       children: [
         {
-          id: 5,
-          content: "item 5",
+          id: 2,
+          content: "item 2",
           width: 3,
-          parent_id: 2,
-          type: "container",
-          children: [
-            { id: 8, content: "item 8", width: 6, type: "text", parent_id: 5 },
-            { id: 9, content: "item 9", width: 6, type: "text", parent_id: 5 },
-          ],
+          type: "text",
+          parent_id: 1,
         },
         {
-          id: 6,
-          content: "item 6",
-          width: 2,
+          id: 3,
+          content: "item 3",
+          width: 3,
           type: "text",
-          parent_id: 2,
+          parent_id: 1,
         },
         {
-          id: 7,
-          content: "item 7",
-          width: 2,
+          id: 342,
+          content: "item 3",
+          width: 3,
           type: "text",
-          parent_id: 2,
+          parent_id: 1,
         },
       ],
     },
+    // {
+    //   id: 4,
+    //   content: "item 2",
+    //   parent_id: null,
+    //   type: "container",
+    //   children: [
+    //     {
+    //       id: 5,
+    //       content: "item 5",
+    //       width: 3,
+    //       parent_id: 2,
+    //       type: "container",
+    //       children: [
+    //         { id: 8, content: "item 8", width: 6, type: "text", parent_id: 5 },
+    //         { id: 9, content: "item 9", width: 6, type: "text", parent_id: 5 },
+    //       ],
+    //     },
+    //     {
+    //       id: 6,
+    //       content: "item 6",
+    //       width: 2,
+    //       type: "text",
+    //       parent_id: 2,
+    //     },
+    //     {
+    //       id: 7,
+    //       content: "item 7",
+    //       width: 2,
+    //       type: "text",
+    //       parent_id: 2,
+    //     },
+    //   ],
+    // },
   ])
   console.log(blocks)
   return (
@@ -115,7 +144,7 @@ function Container({ block, blockIndex, setBlocks }) {
   return (
     <>
       <ReactSortable
-        className="text-black"
+        className="text-black flex"
         key={block.id}
         list={block.children}
         setList={(currentList) => {
