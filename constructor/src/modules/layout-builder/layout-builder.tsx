@@ -88,9 +88,10 @@ export const LayoutBuilder = () => {
     <div>
       <ReactSortable
         className="text-black"
+        animation={200}
         group={{
           name: "grouping",
-          pull: false,
+          pull: true,
           put: true,
         }}
         list={blocks}
@@ -131,11 +132,13 @@ function Container({ block, blockIndex, setBlocks }) {
             return tempList
           })
         }}
+        animation={200}
         group={{
           name: "grouping",
-          pull: false,
+          pull: true,
           put: true,
         }}
+        // {...sortableOptions}
       >
         {block.children &&
           block.children.map((childBlock, index) => {
